@@ -86,12 +86,15 @@ body {
 }
 
 .metallic-text {
+  /* every stop stays dark enough to read on porcelain — the sheen is a
+     brightness ripple within legible silvers, never a white-out */
   background: linear-gradient(
     115deg,
-    var(--silver-deep) 0%,
-    var(--platinum-hi) 45%,
-    var(--silver) 60%,
-    var(--silver-deep) 100%
+    #454b56 0%,
+    var(--silver-deep) 35%,
+    #959cab 48%,
+    var(--silver-deep) 62%,
+    #454b56 100%
   );
   -webkit-background-clip: text;
   background-clip: text;

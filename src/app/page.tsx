@@ -89,7 +89,7 @@ export default function Home() {
       {/* Hero */}
       <section id="top" className="mx-auto max-w-6xl px-5 pt-28 md:px-8 md:pt-36">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.32em] text-[#7e8592]">
+          <p className="text-xs uppercase tracking-[0.32em] text-[#5d6470]">
             572 Bloomfield Ave · Bloomfield, New Jersey
           </p>
           <h1 className="font-display mt-5 max-w-3xl text-4xl font-light leading-[1.06] sm:text-6xl md:text-7xl">
@@ -127,7 +127,7 @@ export default function Home() {
           {/* Left sticky column (desktop) */}
           <aside className="hidden md:block">
             <div className="sticky top-32">
-              <p className="text-xs uppercase tracking-[0.32em] text-[#7e8592]">Currently viewing</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-[#5d6470]">Currently viewing</p>
               <p id="stage-label" className="font-display mt-3 text-4xl font-light italic">
                 The House
               </p>
@@ -212,7 +212,7 @@ export default function Home() {
               <Reveal>
                 <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.32em] text-[#7e8592]">The address</p>
+                    <p className="text-xs uppercase tracking-[0.32em] text-[#5d6470]">The address</p>
                     <p className="font-display mt-3 text-2xl font-light">
                       572 Bloomfield Ave
                       <br />
@@ -223,7 +223,7 @@ export default function Home() {
                     </a>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-[0.32em] text-[#7e8592]">Hours</p>
+                    <p className="text-xs uppercase tracking-[0.32em] text-[#5d6470]">Hours</p>
                     <ul className="mt-3 space-y-1 text-base text-[#4b4b52]">
                       <li>Monday – Saturday · 10 AM – 7 PM</li>
                       <li>Sunday · Closed</li>
