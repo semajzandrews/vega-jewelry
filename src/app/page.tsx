@@ -1,7 +1,8 @@
 import { Effects, Sheen, Reveal } from "../components/Effects";
+import CallOrText from "../components/CallOrText";
 
-const PHONE = "(973) 429-0525";
-const PHONE_HREF = "tel:+19734290525";
+/* PHONE DOCTRINE · the number is written down exactly once, as digits, inside
+   CallOrText. Display and every href are derived from it there. */
 const ADDRESS = "572 Bloomfield Ave, Bloomfield, NJ 07003";
 
 const services = [
@@ -76,12 +77,7 @@ export default function Home() {
             <a href="#visit" className="hidden text-[#4b4b52] transition-colors hover:text-[#1b1b1e] sm:block">
               Visit
             </a>
-            <a
-              href={PHONE_HREF}
-              className="rounded-full border border-[#1b1b1e] px-4 py-1.5 text-sm transition-colors hover:bg-[#1b1b1e] hover:text-[#faf8f4]"
-            >
-              {PHONE}
-            </a>
+            <CallOrText variant="nav" />
           </div>
         </nav>
       </header>
@@ -104,12 +100,7 @@ export default function Home() {
             counter where you&rsquo;re spoken to like a neighbor. 4.4 stars on Google from the
             people who shop here.
           </p>
-          <a
-            href={PHONE_HREF}
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-[#1b1b1e] px-6 py-3 text-sm text-[#faf8f4] transition-opacity hover:opacity-85"
-          >
-            Call the counter
-          </a>
+          <CallOrText variant="hero" label="Call or text the counter" align="left" />
         </Reveal>
         <Reveal delay={200} className="mt-12">
           <Sheen
@@ -218,9 +209,7 @@ export default function Home() {
                       <br />
                       Bloomfield, NJ 07003
                     </p>
-                    <a href={PHONE_HREF} className="mt-4 inline-block text-lg underline decoration-[#aab0bc] underline-offset-4">
-                      {PHONE}
-                    </a>
+                    <CallOrText variant="quiet" align="left" className="mt-4 inline-block" />
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-[0.32em] text-[#5d6470]">Hours</p>
@@ -257,9 +246,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col gap-2 text-sm text-[#4b4b52] md:flex-row md:items-center md:gap-6">
             <span>{ADDRESS}</span>
-            <a href={PHONE_HREF} className="underline decoration-[#aab0bc] underline-offset-4">
-              {PHONE}
-            </a>
+            <CallOrText variant="quiet" align="left" up className="inline-block [&>button]:text-sm" />
             <a
               href="https://www.facebook.com/vegapalacejewelry/"
               target="_blank"
@@ -283,20 +270,10 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Fixed tap-to-call — collapses to 46px icon circle on phones (ARSENAL §13) */}
-      <a
-        href={PHONE_HREF}
-        aria-label={`Call Vega Jewelry at ${PHONE}`}
-        className="fixed bottom-5 right-5 z-50 flex h-[46px] w-[46px] items-center justify-center rounded-full bg-[#1b1b1e] text-[#faf8f4] shadow-lg transition-transform hover:scale-105 md:w-auto md:gap-2 md:px-5"
-      >
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
-            fill="currentColor"
-          />
-        </svg>
-        <span className="hidden text-sm md:inline">{PHONE}</span>
-      </a>
+      {/* Fixed tap-to-call — collapses to a 46px circle on phones (ARSENAL §13).
+          Opens upward, because it sits at the bottom of the viewport. */}
+      <CallOrText variant="dock" up className="fixed bottom-5 right-5 z-50" />
+
     </main>
   );
 }
